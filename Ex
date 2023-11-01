@@ -1,0 +1,27 @@
+public class FindMinMax {
+    public static void main(String[] args) {
+        if (args.length != 6) {
+            System.out.println("Usage: java FindMinMax [MIN/MAX] <num1> <num2> <num3> <num4> <num5>");
+            return;
+        }
+
+        String operation = args[0];
+        if (!operation.equals("MIN") && !operation.equals("MAX")) {
+            System.out.println("Invalid operation. Please use MIN or MAX.");
+            return;
+        }
+
+        int result = Integer.parseInt(args[1]);
+
+        for (int i = 2; i < 6; i++) {
+            int num = Integer.parseInt(args[i]);
+            if (operation.equals("MIN") && num < result) {
+                result = num;
+            } else if (operation.equals("MAX") && num > result) {
+                result = num;
+            }
+        }
+
+        System.out.println(result);
+    }
+}
